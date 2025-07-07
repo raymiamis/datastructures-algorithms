@@ -45,7 +45,7 @@ public class MaximumSubArray {
 
     /**
      * Algorithm to compute the maximum subarray of an array filled with negative and positive numbers
-     * using divide and conquer principles. O(nlog(n)) - best
+     * using divide and conquer principles. O(nlog(n)) - better
      * @param numbers int array to be searched in
      * @param left index 0
      * @param right max index
@@ -78,6 +78,26 @@ public class MaximumSubArray {
         }
 
         return Math.max(Math.max(maxLeft, maxRight), midLeftMax+midRightMax);
+    }
+
+    /**
+     * Algorithm to compute the maximum subarray of an array filled with negative and positive numbers
+     * also known as Kadane's algorithm. O(n) - best
+     * @param numbers int array to be searched within
+     * @return sum of the max subarray values
+     */
+    public static int maxSumLinear(int[] numbers) {
+        int currentSum = 0;
+        int maxSum = Integer.MIN_VALUE;
+
+        for (int number : numbers) {
+            currentSum += number;
+            maxSum = Math.max(currentSum, maxSum);
+            if (currentSum < 0) {
+                currentSum = 0;
+            }
+        }
+        return maxSum;
     }
 
 }
