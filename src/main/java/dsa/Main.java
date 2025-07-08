@@ -12,12 +12,15 @@ public class Main {
         System.out.println("Enter the pattern to be searched for:");
         String pattern = scan.nextLine();
 
-        int index = StringSearch.bruteForceSearch(text, pattern);
+        int[] foundPositions = new int[text.length()];
+        int[] index = {-1};
 
-        if (index != -1) {
-            System.out.println("Pattern gefunden an Index: " + index);
-        } else {
-            System.out.println("Pattern nicht gefunden.");
+        StringSearch.boyerMooreSearch(text, pattern, foundPositions, index);
+
+        for (int foundIndex : foundPositions) {
+            if (foundIndex != 0) {
+                System.out.println(foundIndex);
+            }
         }
     }
 }
