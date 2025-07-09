@@ -1,6 +1,7 @@
 package dsa;
 
 public class AVLTree<K extends Comparable<K>> {
+
     private static class AVLNode<K extends Comparable<K>> {
         private int height;
         private K key;
