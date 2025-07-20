@@ -1,1 +1,3 @@
-This is a growing collections of datastructures and algorithms, most of them are basic university stuff.
+# Datastructures & Algorithms
+
+### This is a growing collections of datastructures and algorithms realized in Java. NOT complete!
